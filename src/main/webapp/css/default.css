@@ -1,0 +1,11 @@
+.login {
+    background: #FFF;
+}
+
+.form-signin{
+    width: 350px;
+    margin: 0 auto;
+    padding: 20px 30px;
+    border: 1px solid #CCC;
+    border-radius: 13px;
+}
