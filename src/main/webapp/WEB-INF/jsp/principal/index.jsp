@@ -2,12 +2,15 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
-    <head>
+    
+    
+	<head>
         <jsp:include page="../template/header.jsp" /> 
-    </head>
-    <body>
-        Código
-        
-        <jsp:include page="../template/footer.jsp" /> 
-    </body>
+
+	</head>
+	<body class="sapUiBody" role="application">
+            <div id="content"></div>
+            <jsp:include page="../template/footer.jsp" /> 
+	</body>
+    
 </html>
