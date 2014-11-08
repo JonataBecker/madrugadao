@@ -1,7 +1,7 @@
-sap.ui.jsview("madrugadao.shell", {
+sap.ui.jsview("js.shell", {
 
 	getControllerName : function() {
-		return "testpluginui5.main";
+		return "js.main";
 	},
 
 	createContent : function(oController) {
@@ -9,11 +9,17 @@ sap.ui.jsview("madrugadao.shell", {
 		var oShell = new sap.ui.ux3.Shell("oShell", {
 			appTitle : "OpenUI5"
 		});
-                
+
+		oShell.addWorksetItem(new sap.ui.ux3.NavigationItem({
+			key : "js",
+			text : "Toaster View"
+		}));
+
+
 		var mContent = {};
 		// JSView Button
 		mContent.js = sap.ui.view({
-			viewName : "madrugadao.dashboardView",
+			viewName : "js.dashboard",
 			type : sap.ui.core.mvc.ViewType.JS
 		});
 

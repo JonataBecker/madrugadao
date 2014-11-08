@@ -1,19 +1,58 @@
-sap.ui.jsview("testpluginui5.main", {
+var oNavContainer  = null; 
 
-	/** Specifies the Controller belonging to this View. 
-	* In the case that it is not implemented, or that "null" is returned, this View does not have a Controller.
-	* @memberOf testpluginui5.main
-	*/ 
+
+sap.ui.jsview("js.main", {
+
 	getControllerName : function() {
-		return "madrugadao.main";
+		return "js.main";
 	},
 
-	/** Is initially called once after the Controller has been instantiated. It is the place where the UI is constructed. 
-	* Since the Controller is given to this method, its event handlers can be attached right away. 
-	* @memberOf testpluginui5.main
-	*/ 
 	createContent : function(oController) {
+            var oLayout = new sap.ui.commons.layout.VerticalLayout({width:"100%"});
             
-	}
+            var view = sap.ui.view({
+                id : "dashboard",
+                viewName : "js.dashboard",
+                type : sap.ui.core.mvc.ViewType.JS
+            });
+            
+            var settings = sap.ui.view({
+                id : "settings",
+                viewName : "js.settings",
+                type : sap.ui.core.mvc.ViewType.JS
+            });
+            
+            var analitics = sap.ui.view({
+                id : "analitics",
+                viewName : "js.analitics",
+                type : sap.ui.core.mvc.ViewType.JS
+            });
+            
+            oNavContainer = new sap.m.NavContainer("container", {
+                pages: [
+                    new sap.m.Page({id:"page1",title: "Dashboard", content: view}),
+                    new sap.m.Page({id:"page2",title: "Preferências", content: settings}),
+                    new sap.m.Page({id:"page3",title: "Análise", content: analitics})
+                ],
+                width: '100%',
+                height: '500px'
+            });
+            
+            var oToolbar = new sap.m.Bar("bar", {
+                mode:"Navigation",
+                contentLeft: [new sap.m.Button({type:sap.m.ButtonType.Up, press: oController.back})],
+                contentRight: [new sap.m.Button({type:sap.m.ButtonType.Back, press: oController.next})] 
+            });
+            toolbar = oToolbar;
+
+            oLayout.addContent(oNavContainer);
+            oLayout.addContent(oToolbar);
+            return oLayout;
+            
+	},
+        
+        getNavigator : function() {
+            return oNavContainer;
+        }
 
 });

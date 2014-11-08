@@ -7,17 +7,19 @@
 <meta name="author" content="">
 <title>VRaptor</title>
 <link href="<c:url value="/css/default.css" />" rel="stylesheet">
-<script src="ahttps://openui5.hana.ondemand.com/resources/sap-ui-core.js"
+<script src="https://sapui5.hana.ondemand.com/resources/sap-ui-core.js"
     id="sap-ui-bootstrap"
-    data-sap-ui-libs="sap.ui.commons,sap.ui.table, sap.ui.ux3"
-    data-sap-ui-theme="sap_goldreflection">
+    data-sap-ui-libs="sap.ui.commons,sap.ui.table, sap.ui.ux3, sap.m"
+    data-sap-ui-theme="sap_bluecrystal"
+    >
 </script>
 <script>
-    sap.ui.localResources("madrugadao");
+    sap.ui.localResources("js");
     var view = sap.ui.view({
             id : "idmain",
-            viewName : "madrugadao.shell",
+            viewName : "js.main",
             type : sap.ui.core.mvc.ViewType.JS
     });
     view.placeAt("content");
+    
 </script>
