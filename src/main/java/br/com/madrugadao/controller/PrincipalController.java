@@ -1,4 +1,4 @@
-package br.com.vraptor4.controller;
+package br.com.madrugadao.controller;
 
 import br.com.caelum.vraptor.Controller;
 import br.com.caelum.vraptor.Get;
