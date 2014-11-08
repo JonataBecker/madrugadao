@@ -53,12 +53,6 @@ sap.ui.controller("js.dashboard", {
                     }
                 );
                 
-//                var oModel = new sap.ui.model.json.JSONModel("http://localhost:8080/TomcatServices/webresources/devices/airconditionertemperature");
-//                this.getView().getTable().setModel(oModel);  
-//                console.log(this.getView().getLabel());
-//                
-//                this.getView().getLabel().setText("teste");
-                
                 
 	},
         
